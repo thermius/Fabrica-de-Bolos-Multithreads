@@ -43,6 +43,16 @@ A produção é dividida entre diferentes trabalhadores:
                        Bolos finalizados
 ```
 
+## 🔄 Compartilhamento de recursos
+
+A produção é organizada através de filas compartilhadas entre as threads. Cada etapa da produção possui um recurso compartilhado entre dois participantes:
+
+- "main" ↔ Trabalhador 1 — compartilham o acesso à fila de pedidos.
+- Trabalhador 1 ↔ Trabalhador 2 — compartilham o acesso à fila de bolos para assar.
+- Trabalhador 2 ↔ Trabalhador 3 — compartilham o acesso à fila de bolos assados.
+
+
+
 ### Trabalhadores
 
 * **Trabalhador 1** — recebe os pedidos e prepara as misturas.
