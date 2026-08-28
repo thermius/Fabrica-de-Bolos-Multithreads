@@ -50,6 +50,12 @@ A produção é dividida entre diferentes trabalhadores:
 * **Trabalhador 3** — embala e despacha os bolos.
 * **Thread `main`** — inicia a produção, acompanha a execução e coordena o encerramento.
 
+Cada trabalhador guarda dentro de seu contexto de execução um pool para que possa guardar suas informações de forma isolada.
+
+```text
+  Fila *pool_interno = NULL;
+```
+
 ## 🧵 Concorrência
 
 As threads trabalham simultaneamente e compartilham estruturas de dados.
@@ -124,7 +130,7 @@ Também foram realizados testes com uma produção maior para verificar o compor
 
 O programa possui um mecanismo de encerramento controlado.
 
-A thread `main` altera um controlador global e sinaliza a condition variable para que o Trabalhador 3 possa sair de seu estado de espera.
+A thread `main` altera um controlador global e sinaliza a variavel condicional para que o Trabalhador 3 possa sair de seu estado de espera.
 
 Cada trabalhador verifica o controlador e encerra sua execução de maneira controlada.
 
@@ -172,7 +178,7 @@ valgrind --leak-check=full --show-leak-kinds=all ./fabrica
 * **C**
 * **POSIX Threads (`pthread`)**
 * **Mutex**
-* **Condition Variables**
+* **Variavel Condicional**
 * **Estruturas de dados**
 * **Gerenciamento manual de memória**
 * **Valgrind**
