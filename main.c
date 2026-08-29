@@ -81,7 +81,7 @@ int main ()
 	while (1)
 	{
 			char c = 0;
-			printf("[ ENTRADA ] - main(): digite 0 para finalizar as threads\n");
+			printf("[ ENTRADA ] - main(): digite 'a' para finalizar as threads\n");
 			scanf (" %c",&c);
 			if (c == 'a') break;			
 	}
