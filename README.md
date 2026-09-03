@@ -193,3 +193,9 @@ valgrind --leak-check=full --show-leak-kinds=all ./fabrica
 * **Gerenciamento manual de memória**
 * **Valgrind**
 * **Linux**
+
+## 📄 Licença
+
+Todos os direitos reservados.
+
+Este projeto é disponibilizado exclusivamente para fins de portfólio e demonstração técnica. O código-fonte não pode ser copiado, redistribuído, modificado ou utilizado, integral ou parcialmente, sem autorização prévia e explícita do autor.
